@@ -1,0 +1,54 @@
+.header{
+    height:48px;
+    margin:2px 0.5rem;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family: Inter, sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo__text-primary{
+    color:var(--color-primary);
+}
+.logo__text-secondary{
+    color:var(--color-secondary);
+}
+
+.header__nav{
+    display: none;
+}
+
+.header__button-group {
+    display: flex;
+    gap: 8px; /* Добавляем отступ между кнопками */
+}
+
+.header__cart-button,
+.header__menu-button {
+    height: 38px;
+    width: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: solid;
+    padding: 0; /* Важно обнулить padding */
+    cursor: pointer;
+}
+
+/* Стили для SVG внутри кнопок */
+.header__cart-button svg,
+.header__menu-button svg {
+    width: 24px; /* Фиксированный размер иконки */
+    height: 24px;
+    display: block; /* Убирает лишние отступы */
+}

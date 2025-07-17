@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap');
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/fonts/inter/Inter-Regular.woff2') format('woff2'),
+    url('/public/fonts/inter/Inter-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/fonts/inter/Inter-Bold.woff2') format('woff2'),
+    url('/public/fonts/inter/Inter-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+:root {
+    font-size: 16px;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-accent: 'Jura','Inter', -apple-system, sans-serif;
+
+
+    --color-text: #000000;
+    --color-on-primary: #ffffff;    /* Текст на primary-цвете */
+    --color-on-secondary: #ffffff;
+
+    --line-height-base: 1.6;
+    --line-height-headings: 1.2;
+
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    line-height: var(--line-height-base);
+}
+
+
+h1 {
+    font-family: var(--font-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-size: 92px;
+    line-height: 80%;
+    word-wrap: break-word;
+    margin: 0 0 0.5em 0;
+}
+
+h2 {
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    margin: 0 0 0.5em 0;
+}
+
+
+a { text-decoration: none; }
