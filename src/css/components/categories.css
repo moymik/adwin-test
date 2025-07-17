@@ -1,0 +1,19 @@
+.categories__list {
+    margin-left: 0.75rem;
+}
+
+.categories__item::before {
+    content: url("/icons/arrow.svg");
+}
+
+.categories__item a {
+    color: black;
+}
+
+.categories__item a:hover {
+    color: var(--color-secondary);
+}
+
+.categories__item a:visited {
+    color: var(--color-primary);
+}
