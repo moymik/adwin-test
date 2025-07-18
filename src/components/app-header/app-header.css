@@ -1,11 +1,11 @@
-header{
-    height:48px;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
+header {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.logo{
+.logo {
     font-family: Inter, sans-serif;
     font-size: 26px;
     font-weight: bold;
@@ -15,39 +15,133 @@ header{
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.logo__text-primary{
-    color:var(--color-primary);
-}
-.logo__text-secondary{
-    color:var(--color-secondary);
+.logo__text-primary {
+    color: var(--color-primary);
 }
 
-.header__nav{
-    display: none;
+.logo__text-secondary {
+    color: var(--color-secondary);
 }
+
 
 .header__button-group {
     display: flex;
+    align-items: center;
     gap: 8px; /* Добавляем отступ между кнопками */
 }
 
 .header__cart-button,
 .header__menu-button {
-    height: 38px;
-    width: 38px;
+
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     background: none;
-    border: solid;
     padding: 0; /* Важно обнулить padding */
-    cursor: pointer;
+
 }
 
+
 /* Стили для SVG внутри кнопок */
-.header__cart-button svg,
-.header__menu-button svg {
-    width: 24px; /* Фиксированный размер иконки */
-    height: 24px;
-    display: block; /* Убирает лишние отступы */
+/* Стили иконок кнопок */
+.header__cart-icon,
+.header__menu-icon {
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+
+/* Блок навигации */
+.header__nav {
+    position: relative;
+}
+
+/* Элемент списка в навигации */
+.header__nav-list {
+    top: 48px;
+    position: fixed;
+    right: 0;
+    width: 100vw;
+    background: white;
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    list-style: none;
+    padding: 2rem 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 35vh;
+
+}
+
+/* Модификатор открытого состояния */
+.header__nav--open .header__nav-list {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Элемент пункта меню */
+
+
+/* Элемент ссылки */
+.header__nav-link {
+    display: block;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Состояние ховера */
+.header__nav-link:hover {
+    color: var(--color-link-hover);
+}
+
+/* Блок кнопки обратного звонка */
+.header__callback-button {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+
+/* Анимации кнопок */
+
+.header__menu-line {
+    transform-origin: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .header__menu-line {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+/* Состояние открытого меню */
+.header__nav--open + .header__button-group .header__menu-line--top {
+    transform: translateY(3px) rotate(45deg); /* Центрирование крестика */
+}
+.header__nav--open + .header__button-group .header__menu-line--middle {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.header__nav--open + .header__button-group .header__menu-line--bottom {
+    transform: translateY(-3px) rotate(-45deg); /* Центрирование крестика */
+}
+
+/* Анимация кнопки корзины */
+.header__nav--open + .header__button-group .header__cart-button {
+    opacity: 0;
+    transform: scale(0.8);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    transition-delay: 0.2s; /* Задержка для плавного исчезновения после анимации меню */
 }

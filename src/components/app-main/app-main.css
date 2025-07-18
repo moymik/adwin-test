@@ -1,14 +1,33 @@
 
 main h1 {
+    position: relative;
     margin-bottom: 2rem;
+    z-index: -2;
 }
 
 main h2 {
+    position: relative;
     margin-bottom: 0.5rem;
+    z-index: -2;
 }
 
-main{
-    background-image:url("/images/background-343.png");
+
+.bg-overlay {
+    position: absolute;
+    margin-top: -3rem;
+    right: 0;
+    width: 343px;
+    height: 343px;
+    background-image: url("/images/background-343.png");
     background-repeat: no-repeat;
     background-position: right 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+.banner-button {
+    background-color: var(--color-secondary);
+    font-weight: 600;
+    color: var(--color-on-secondary);
 }

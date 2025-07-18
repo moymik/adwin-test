@@ -13,16 +13,41 @@
 <footer id="app-footer"></footer>
 
 <script type="module">
-    import {loadComponent} from "./src/utils/loadComponent.js";
-    Promise.all([
-        loadComponent('app-header'),
-        loadComponent('app-main'),
-        loadComponent('app-footer')
-    ]).then(([header, main, footer]) => {
-        document.getElementById('app-header').innerHTML = header;
-        document.getElementById('app-main').innerHTML = main;
-        document.getElementById('app-footer').innerHTML = footer;
-    });
+
+    import {loadComponent} from "./src/js/utils/loadComponent.js";
+
+    try {
+        await Promise.all([
+            loadComponent('app-header'),
+            loadComponent('app-main'),
+            loadComponent('app-footer')
+        ]).then(([header, main, footer]) => {
+            document.getElementById('app-header').innerHTML = header;
+            document.getElementById('app-main').innerHTML = main;
+            document.getElementById('app-footer').innerHTML = footer;
+        });
+        initDropdownMenu();
+    } catch (error) {
+        console.error('Ошибка загрузки компонентов:', error);
+    }
+
+
+    function initDropdownMenu() {
+        const toggle = document.querySelector('.header__menu-button');
+        const menu = document.querySelector('.header__nav');
+        toggle?.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('header__nav--open');
+        });
+        // Закрытие при клике вне меню
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.header__nav')) {
+                document.querySelector('.header__nav').forEach(d => {
+                    d.classList.remove('header__nav--open');
+                });
+            }
+        });
+    }
 </script>
 </body>
 </html>

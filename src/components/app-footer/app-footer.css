@@ -1,15 +1,29 @@
 .categories__item::before {
-    content: url("/icons/arrow.svg");
+    content: "";
+    display: inline-block;
+    width: 16px; /* размер иконки */
+    height: 16px;
+    background-color: currentColor; /* цвет будет наследоваться от родителя */
+    mask: url("/icons/arrow.svg") no-repeat center;
+    mask-size: contain;
+    margin-right: 8px; /* если нужно отступ */
 }
+
+.categories__item:hover::before {
+    color: var(--color-link-hover); /* любой цвет при наведении */
+}
+
 
 .categories__item a {
     color: black;
 }
 
-.categories__item a:hover {
-    color: var(--color-secondary);
-}
-
 .categories__item a:visited {
     color: var(--color-primary);
 }
+
+.categories__item a:hover {
+    color: var(--color-link-hover);
+}
+
+

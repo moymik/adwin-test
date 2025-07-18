@@ -1,12 +1,14 @@
 
 :root {
     /* Primary Color */
-    --color-primary: #EAB308;       /* Основной цвет */
+    --color-primary: #EAB308; /* Основной цвет */
     --color-primary-hover: #FEC71C; /* При наведении */
     --color-primary-pressed: #CC9500; /* При нажатии */
 
     /* Secondary Color */
-    --color-secondary:#2581EB;
+    --color-secondary: #2581EB;
     --color-secondary-hover: #439FFF;
     --color-secondary-pressed: #0763CD;
+
+    --color-link-hover: #2581EB;
 }
