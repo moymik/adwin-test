@@ -1,7 +1,3 @@
-.categories__list {
-    margin-left: 0.75rem;
-}
-
 .categories__item::before {
     content: url("/icons/arrow.svg");
 }

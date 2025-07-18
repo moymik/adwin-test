@@ -8,70 +8,21 @@
     <link rel="icon" href="public/icons/logo.svg">
 </head>
 <body>
-<header class="header">
-    <a href="/" class="logo">
-        <img src="public/icons/logo.svg" alt="DuckShop - магазин резиновых уточек" class="logo__image">
-        <span class="logo__text-primary">Duck</span><span class="logo__text-secondary">Shop</span>
-    </a>
+<header id="app-header"></header>
+<main id="app-main"></main>
+<footer id="app-footer"></footer>
 
-    <nav class="header__nav">
-        <ul class="nav__list">
-            <li class="nav__item"><a href="/" class="nav__link">Главная</a></li>
-            <li class="nav__item"><a href="/catalog" class="nav__link">Каталог</a></li>
-            <li class="nav__item"><a href="/blog" class="nav__link">Блог</a></li>
-            <li class="nav__item"><a href="/reviews" class="nav__link">Отзывы</a></li>
-            <li class="nav__item"><a href="/contacts" class="nav__link">Контакты</a></li>
-            <li class="nav__item">   <!--находится в списке в мобильном варианте иначе видна в шапке-->
-                <button class="callback-button">Заказать звонок</button>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="header__button-group">
-        <button class="header__cart-button" aria-label="Корзина">
-            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.3335 7.33332L6.00016 2.66666" stroke="#6B7280" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-                <path d="M12.6667 7.33332L10 2.66666" stroke="#6B7280" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1.3335 7.33334H14.6668" stroke="#6B7280" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2.3335 7.33334L3.40016 12.2667C3.4625 12.5724 3.63006 12.8465 3.87369 13.0414C4.11731 13.2363 4.42157 13.3396 4.7335 13.3333H11.2668C11.8668 13.3333 12.4668 12.8667 12.6002 12.2667L13.7335 7.33334"
-                      stroke="#6B7280" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M6 7.33334L6.66667 13.3333" stroke="#6B7280" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3 10.3333H13" stroke="#6B7280" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10.0002 7.33334L9.3335 13.3333" stroke="#6B7280" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-            </svg>
-        </button>
-        <!-- <button class="callback-button">Заказать звонок</button> -->
-        <button class="header__menu-button" aria-label="Меню" aria-expanded="false">
-            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 4H14" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 8H14" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 12H14" stroke="#1F2937" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-    </div>
-</header>
-<main class="main">
-    <h1 class="banner__title">Много уточек</h1>
-    <section class="banner">
-        <div class="banner__content">
-            <h2 class="banner__subtitle">Маленький друг найдётся для каждого в этом кряквенно жёлтом мире</h2>
-            <button class="banner-button">Смотреть уточек</button>
-        </div>
-    </section>
-</main>
-<footer>
-    <nav class="categories">
-        <ul class="categories__list">
-            <li class="categories__item"><a href="/cat1egory1" class="categories__link">Классические</a></li>
-            <li class="categories__item"><a href="/cat1egory2" class="categories__link">Уточки-панки</a></li>
-            <li class="categories__item"><a href="/cat1egory3" class="categories__link">Супергерои</a></li>
-            <li class="categories__item"><a href="/cat1egory4" class="categories__link">Милые</a></li>
-            <li class="categories__item"><a href="/cat1egory5" class="categories__link">Для детей</a></li>
-            <li class="categories__item"><a href="/cat1egory6" class="categories__link">Взрослым</a></li>
-        </ul>
-    </nav>
-</footer>
+<script type="module">
+    import {loadComponent} from "./src/utils/loadComponent.js";
+    Promise.all([
+        loadComponent('app-header'),
+        loadComponent('app-main'),
+        loadComponent('app-footer')
+    ]).then(([header, main, footer]) => {
+        document.getElementById('app-header').innerHTML = header;
+        document.getElementById('app-main').innerHTML = main;
+        document.getElementById('app-footer').innerHTML = footer;
+    });
+</script>
 </body>
 </html>

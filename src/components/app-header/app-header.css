@@ -1,6 +1,5 @@
-.header{
+header{
     height:48px;
-    margin:2px 0.5rem;
     display:flex;
     flex-direction:row;
     justify-content:space-between;
