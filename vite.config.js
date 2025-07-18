@@ -7,5 +7,10 @@ export default {
                 assetFileNames: 'assets/[name].[ext]'
             }
         }
+    },
+    server: {
+        fs: {
+            allow: ['..'] // Разрешить доступ к родительским папкам
+        }
     }
 }
