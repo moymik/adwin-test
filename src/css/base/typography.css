@@ -22,17 +22,25 @@
     font-size: 16px;
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-accent: 'Jura','Inter', -apple-system, sans-serif;
+    --font-accent: 'Jura', 'Inter', -apple-system, sans-serif;
 
 
     --color-text: #000000;
-    --color-on-primary: #ffffff;    /* Текст на primary-цвете */
+    --color-on-primary: #ffffff; /* Текст на primary-цвете */
     --color-on-secondary: #ffffff;
 
     --line-height-base: 1.6;
     --line-height-headings: 1.2;
 
 }
+
+.text-red {
+    color: #ff0000; /* Красный цвет в HEX */
+    /* Или используйте предопределенные CSS-переменные, если они есть: */
+    /* color: var(--color-error); */
+}
+
+
 
 body {
     font-family: var(--font-main);
@@ -61,4 +69,6 @@ h2 {
 }
 
 
-a { text-decoration: none; }
+a {
+    text-decoration: none;
+}

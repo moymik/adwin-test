@@ -28,6 +28,15 @@ main h2 {
 
 .banner-button {
     background-color: var(--color-secondary);
+
+    &:active {
+        background: var(--color-secondary-pressed);
+    }
+
+    &:hover {
+        background: var(--color-secondary-hover);
+    }
+
     font-weight: 600;
     color: var(--color-on-secondary);
 }

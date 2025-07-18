@@ -11,22 +11,25 @@
 <header id="app-header"></header>
 <main id="app-main"></main>
 <footer id="app-footer"></footer>
+<dialog id="callback-dialog" aria-labelledby="callbackDialogTitle"/>
 
 <script type="module">
-
     import {loadComponent} from "./src/js/utils/loadComponent.js";
 
     try {
         await Promise.all([
             loadComponent('app-header'),
             loadComponent('app-main'),
-            loadComponent('app-footer')
-        ]).then(([header, main, footer]) => {
+            loadComponent('app-footer'),
+            loadComponent('callback-dialog')
+        ]).then(([header, main, footer, dialog]) => {
             document.getElementById('app-header').innerHTML = header;
             document.getElementById('app-main').innerHTML = main;
             document.getElementById('app-footer').innerHTML = footer;
+            document.getElementById('callback-dialog').innerHTML = dialog;
         });
         initDropdownMenu();
+        initCallbackDialog();
     } catch (error) {
         console.error('Ошибка загрузки компонентов:', error);
     }
@@ -41,10 +44,45 @@
         });
         // Закрытие при клике вне меню
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.header__nav')) {
-                document.querySelector('.header__nav').forEach(d => {
-                    d.classList.remove('header__nav--open');
-                });
+            // Проверяем что кликнули не по меню и не по кнопке
+            if (!e.target.closest('.header__nav') && !e.target.closest('.header__menu-button')) {
+                menu.classList.remove('header__nav--open');
+            }
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                menu.classList.remove('header__nav--open');
+            }
+        });
+    }
+
+    function initCallbackDialog() {
+        const dialog = document.getElementById('callback-dialog');
+        const openButton = document.querySelector(".header__callback-button");
+
+        // Проверяем, что элементы существуют
+        if (!dialog || !openButton) {
+            console.error('Не найдены необходимые элементы для callback dialog');
+            return;
+        }
+
+        openButton.addEventListener('click', () => {
+            dialog.showModal();
+        });
+
+        // Закрытие при клике вне диалога
+        dialog.addEventListener('click', (e) => {
+            if (e.target === dialog) {
+                dialog.close();
+            }
+        });
+
+        // Закрытие по ESC (добавлено для удобства)
+        dialog.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                dialog.close();
             }
         });
     }
