@@ -60,7 +60,7 @@
 
     function initCallbackDialog() {
         const dialog = document.getElementById('callback-dialog');
-        const openButton = document.querySelector(".header__callback-button");
+        const openButton = document.querySelectorAll(".header__callback-button");
 
         // Проверяем, что элементы существуют
         if (!dialog || !openButton) {
@@ -68,9 +68,11 @@
             return;
         }
 
-        openButton.addEventListener('click', () => {
-            dialog.showModal();
-        });
+        openButton.forEach(button => {
+            button.addEventListener('click', () => {
+                dialog.showModal();
+            });
+        })
 
         // Закрытие при клике вне диалога
         dialog.addEventListener('click', (e) => {

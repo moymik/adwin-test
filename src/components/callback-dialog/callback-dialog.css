@@ -25,17 +25,42 @@
 .callback-form__input {
     padding: 0 1rem;
     margin: 0.4rem 0;
-    height:40px;
+    height: 40px;
     border: 4px solid rgba(128, 128, 128, 0.1);
     border-radius: 14px;
 }
 
-.callback-form__privacy a{
+.callback-form__privacy a {
     color: var(--color-secondary);
+
     &:visited {
-        color:var(--color-secondary-pressed);
+        color: var(--color-secondary-pressed);
     }
+
     &:hover {
-        color:var(--color-secondary-hover)
+        color: var(--color-secondary-hover)
     }
+}
+
+@media (min-width: 960px) {
+    #callback-dialog {
+        margin: auto;
+        width: 417px;
+        height: 360px;
+    }
+
+    .callback-form {
+        justify-content: space-between;
+        height: 90%;
+    }
+
+    .callback-form__submition-button {
+        background-color: var(--color-primary);
+        color: var(--color-on-primary);
+
+        &:hover {
+            background-color: var(--color-primary-hover);
+        }
+    }
+
 }
