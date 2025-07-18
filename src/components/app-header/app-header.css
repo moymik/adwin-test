@@ -103,6 +103,8 @@ header {
 /* Состояние ховера */
 .header__nav-link:hover {
     color: var(--color-link-hover);
+    text-decoration: underline var(--color-link-hover);
+    text-underline-offset: 14px;
 }
 
 /* Блок кнопки обратного звонка */

@@ -108,4 +108,11 @@ main h2 {
         right: 25.8vw;
     }
 
+    .banner__content{
+        position: fixed;
+        right: 7vw;
+        top: calc(55vh + 3vw);
+        width: 25vw;
+
+    }
 }
