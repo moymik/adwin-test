@@ -32,7 +32,6 @@ header {
 
 .header__cart-button,
 .header__menu-button {
-
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -55,6 +54,7 @@ header {
 /* Блок навигации */
 .header__nav {
     position: relative;
+    visibility: hidden;
 }
 
 /* Элемент списка в навигации */
@@ -67,7 +67,6 @@ header {
     border-radius: 4px;
     opacity: 0;
     transform: translateY(-10px);
-    visibility: hidden;
     transition: all 0.3s ease;
     z-index: 100;
     list-style: none;
@@ -78,7 +77,6 @@ header {
     align-items: center;
     justify-content: space-between;
     min-height: 35vh;
-
 }
 
 /* Модификатор открытого состояния */
@@ -111,11 +109,13 @@ header {
 .header__callback-button {
     background: var(--color-primary);
     color: var(--color-on-primary);
+
     &:active {
-        background:var(--color-primary-pressed);
+        background: var(--color-primary-pressed);
     }
+
     &:hover {
-        background:var(--color-primary-hover);
+        background: var(--color-primary-hover);
     }
 }
 
@@ -125,6 +125,8 @@ header {
 .header__menu-line {
     transform-origin: center;
 }
+
+
 @media (prefers-reduced-motion: no-preference) {
     .header__menu-line {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -135,10 +137,12 @@ header {
 .header__nav--open + .header__button-group .header__menu-line--top {
     transform: translateY(3px) rotate(45deg); /* Центрирование крестика */
 }
+
 .header__nav--open + .header__button-group .header__menu-line--middle {
     opacity: 0;
     transform: scaleX(0);
 }
+
 .header__nav--open + .header__button-group .header__menu-line--bottom {
     transform: translateY(-3px) rotate(-45deg); /* Центрирование крестика */
 }
@@ -150,4 +154,64 @@ header {
     visibility: hidden;
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
     transition-delay: 0.2s; /* Задержка для плавного исчезновения после анимации меню */
+}
+
+.header__button-group .header__callback-button {
+    display: none;
+}
+
+@media (min-width: 960px) {
+    .header__button-group .header__callback-button {
+        display: block;
+    }
+
+    .header__nav-list .header__nav-item:last-child {
+        display: none;
+    }
+}
+
+@media (min-width: 1280px) {
+    .header__button-group .header__menu-button {
+        display: none;
+    }
+
+    .header__nav {
+        position: static;
+        visibility: visible;
+        margin: 0;
+    }
+
+    .header__nav-list {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        opacity: 1;
+        width: auto;
+        margin: 0;
+        align-items: center;
+        top: 0px;
+    }
+
+    .header__nav-list {
+        margin: 0;
+        padding: 0;
+        min-height: 36px;
+        transform: none;
+        transition: none;
+    }
+
+    .header__nav-item {
+        visibility: hidden;
+
+        &:last-child {
+            visibility: hidden;
+        }
+    }
+}
+
+@media (min-width: 1260px) {
+    .header__nav-item {
+        visibility: visible;
+    }
+
 }

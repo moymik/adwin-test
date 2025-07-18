@@ -3,13 +3,14 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
+    justify-content: space-between;
 }
 
 #app-footer {
     margin-left: 0.75rem;
     margin-top: auto;
     margin-bottom: 0.75rem;
+    bottom: 0;
 }
 
 #app-main {
@@ -18,4 +19,15 @@ body {
 
 #app-header {
     margin: 2px 0.5rem;
+}
+
+@media (min-width: 960px) {
+    #app-footer {
+        position: fixed;
+        width: 100vw;
+    }
+
+    body {
+        justify-content: normal;
+    }
 }

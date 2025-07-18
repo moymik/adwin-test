@@ -1,3 +1,15 @@
+main {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-overlay {
+    z-index: -1;
+    position: fixed;
+    right: 0;
+    top: 35vh;
+}
 
 main h1 {
     position: relative;
@@ -11,7 +23,7 @@ main h2 {
     z-index: -2;
 }
 
-
+/*
 .bg-overlay {
     position: absolute;
     margin-top: -3rem;
@@ -24,7 +36,7 @@ main h2 {
     pointer-events: none;
     z-index: -1;
 }
-
+*/
 
 .banner-button {
     background-color: var(--color-secondary);
@@ -39,4 +51,61 @@ main h2 {
 
     font-weight: 600;
     color: var(--color-on-secondary);
+}
+
+@media (min-width: 960px) {
+    .banner__title {
+        font-size: clamp(
+                152px,
+                152px + (200 - 152) * (100vw - 960px) / (1200 - 960),
+                200px
+        );
+        top: 0px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    .banner {
+        top: 0;
+        width: auto;
+    }
+
+    .bg-overlay {
+        top: 40px;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .banner__title {
+        font-size: 11.8vw
+    }
+
+    .banner__title .banner__title-first {
+        position: fixed;
+        top: 19vh;
+    }
+
+    .banner__title .banner__title-second {
+        position: fixed;
+        top: 33vh;
+        right: 0;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bg-overlay {
+        position: fixed;
+        margin: auto;
+        top: 16.5vh;
+        right: 25.8vw;
+    }
+
 }

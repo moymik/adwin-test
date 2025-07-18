@@ -35,3 +35,17 @@
 }
 
 
+@media (min-width: 960px) {
+    .categories__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: clamp(
+                24px,                     /* Минимальное значение (при 960px) */
+                24px + (100vw - 960px) / (1260 - 960) * (44 - 24), /* Плавный рост */
+                44px                      /* Максимальное значение (при 1260px+) */
+        );
+
+    }
+
+}
