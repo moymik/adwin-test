@@ -1,16 +1,9 @@
-export default {
+import { defineConfig } from 'vite';
+
+export default defineConfig({
     base: '/',
     build: {
-        assetsDir: 'assets',
-        rollupOptions: {
-            output: {
-                assetFileNames: 'assets/[name].[ext]'
-            }
-        }
-    },
-    server: {
-        fs: {
-            allow: ['..'] // Разрешить доступ к родительским папкам
-        }
+        outDir: 'dist',
+        assetsDir: 'assets'
     }
-}
+});
