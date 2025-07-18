@@ -12,7 +12,7 @@
     width: 16px; /* размер иконки */
     height: 16px;
     background-color: currentColor; /* цвет будет наследоваться от родителя */
-    mask: url("/icons/arrow.svg") no-repeat center;
+    mask: url("/public/icons/arrow.svg") no-repeat center;
     mask-size: contain;
     margin-right: 8px; /* если нужно отступ */
 }

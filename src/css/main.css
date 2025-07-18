@@ -1,4 +1,4 @@
-@import 'reset.css';
+@import '/node_modules/reset.css/reset.css';
 
 @import './base/variables.css';
 @import './base/typography.css';
@@ -9,7 +9,3 @@
 @import '../components/app-main/app-main.css';
 @import '../components/callback-dialog/callback-dialog.css';
 @import 'layouts/body.css';
-
-/*@import './components/hero.css';
-
-@import './utilities/visually-hidden.css';*/
