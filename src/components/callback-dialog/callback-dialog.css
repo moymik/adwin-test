@@ -1,4 +1,4 @@
-#callback-dialog {
+.callback-dialog {
     position: absolute;
     margin: auto 1rem;
     /* коррекция положения элемента */
@@ -6,7 +6,7 @@
     border: none
 }
 
-.callback-dialog__close {
+.callback-dialog__close-button {
     margin: 0.5rem;
     width: 40px;
     height: 40px;
@@ -16,10 +16,14 @@
     top: 0;
 }
 
+
 .callback-form {
-    margin: 1rem;
     display: flex;
     flex-direction: column;
+}
+
+.callback-dialog__callback-form {
+    margin: 1rem;
 }
 
 .callback-form__input {
@@ -43,7 +47,7 @@
 }
 
 @media (min-width: 960px) {
-    #callback-dialog {
+    .callback-dialog {
         margin: auto;
         width: 417px;
         height: 360px;
@@ -54,7 +58,7 @@
         height: 90%;
     }
 
-    .callback-form__submition-button {
+    .callback-form__submission-button {
         background-color: var(--color-primary);
         color: var(--color-on-primary);
 

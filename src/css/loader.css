@@ -1,0 +1,20 @@
+.loader {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--color-primary);
+  animation: spin 1s ease-in-out infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fallback {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}

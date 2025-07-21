@@ -1,14 +1,14 @@
 export function initCallbackDialog() {
-  const dialog = document.getElementById('callback-dialog');
-  const openButton = document.querySelectorAll(".header__callback-button");
+  const dialog = document.getElementById('main-callback-dialog');
+  const openButtons = document.querySelectorAll(".header__callback-button");
 
   // Проверяем, что элементы существуют
-  if (!dialog || !openButton) {
+  if (!dialog || !openButtons) {
     console.error('Не найдены необходимые элементы для callback dialog');
     return;
   }
 
-  openButton.forEach(button => {
+  openButtons.forEach(button => {
     button.addEventListener('click', () => {
       dialog.showModal();
     });

@@ -1,6 +1,7 @@
 export function initDropdownMenu() {
   const toggle = document.querySelector('.header__menu-button');
   const menu = document.querySelector('.header__nav');
+
   toggle?.addEventListener('click', (e) => {
     e.stopPropagation();
     menu.classList.toggle('header__nav--open');

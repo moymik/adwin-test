@@ -1,5 +1,6 @@
 @import '/node_modules/reset.css/reset.css';
 
+@import './loader.css';
 @import './base/variables.css';
 @import './base/typography.css';
 @import "./base/buttons.css";
@@ -8,4 +9,4 @@
 @import '../components/app-footer/app-footer.css';
 @import '../components/app-main/app-main.css';
 @import '../components/callback-dialog/callback-dialog.css';
-@import 'layouts/body.css';
+@import 'layouts/app.css';

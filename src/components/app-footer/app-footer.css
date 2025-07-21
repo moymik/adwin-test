@@ -1,51 +1,49 @@
 .categories__list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
 
 }
 
 .categories__item::before {
-    content: "";
-    display: inline-block;
-    width: 16px; /* размер иконки */
-    height: 16px;
-    background-color: currentColor; /* цвет будет наследоваться от родителя */
-    mask: url("/public/icons/arrow.svg") no-repeat center;
-    mask-size: contain;
-    margin-right: 8px; /* если нужно отступ */
+  content: "";
+  display: inline-block;
+  width: 16px; /* размер иконки */
+  height: 16px;
+  background-color: currentColor; /* цвет будет наследоваться от родителя */
+  mask: url("/public/icons/arrow.svg") no-repeat center;
+  mask-size: contain;
+  margin-right: 8px; /* если нужно отступ */
 }
 
 .categories__item:hover::before {
-    color: var(--color-link-hover); /* любой цвет при наведении */
+  color: var(--color-link-hover); /* любой цвет при наведении */
 }
 
 
-.categories__item a {
-    color: black;
+.categories__link {
+  color: black;
 }
 
-.categories__item a:visited {
-    color: var(--color-primary);
+.categories__link:visited {
+  color: var(--color-primary);
 }
 
-.categories__item a:hover {
-    color: var(--color-link-hover);
+.categories__link:hover {
+  color: var(--color-link-hover);
 }
 
 
 @media (min-width: 960px) {
-    .categories__list {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: clamp(
-                24px,                     /* Минимальное значение (при 960px) */
-                24px + (100vw - 960px) / (1260 - 960) * (44 - 24), /* Плавный рост */
-                44px                      /* Максимальное значение (при 1260px+) */
-        );
+  .categories__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: clamp(
+        24px, /* Минимальное значение (при 960px) */ 24px + (100vw - 960px) / (1260 - 960) * (44 - 24), /* Плавный рост */ 44px /* Максимальное значение (при 1260px+) */
+    );
 
-    }
+  }
 
 }
