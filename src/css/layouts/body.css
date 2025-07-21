@@ -21,6 +21,7 @@ body {
     margin: 2px 0.5rem;
 }
 
+
 @media (min-width: 960px) {
     #app-footer {
         position: fixed;

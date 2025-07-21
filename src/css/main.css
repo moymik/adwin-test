@@ -1,5 +1,6 @@
 @import '/node_modules/reset.css/reset.css';
 
+@import './loader.css';
 @import './base/variables.css';
 @import './base/typography.css';
 @import "./base/buttons.css";
