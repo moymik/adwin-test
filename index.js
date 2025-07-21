@@ -11,10 +11,10 @@ async function initApp() {
       loadComponent('app-footer'),
       loadComponent('callback-dialog')
     ]).then(([header, main, footer, dialog]) => {
-      document.getElementById('app-header').innerHTML = header;
-      document.getElementById('app-main').innerHTML = main;
-      document.getElementById('app-footer').innerHTML = footer;
-      document.getElementById('callback-dialog').innerHTML = dialog;
+      document.querySelector('.app-header').innerHTML = header;
+      document.querySelector('.app-main').innerHTML = main;
+      document.querySelector('.app-footer').innerHTML = footer;
+      document.querySelector('.callback-dialog').innerHTML = dialog;
     });
 
     initDropdownMenu();

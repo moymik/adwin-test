@@ -1,5 +1,5 @@
 export function initCallbackDialog() {
-  const dialog = document.getElementById('callback-dialog');
+  const dialog = document.getElementById('main-callback-dialog');
   const openButtons = document.querySelectorAll(".header__callback-button");
 
   // Проверяем, что элементы существуют

@@ -1,5 +1,5 @@
 
-body {
+.app {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -17,7 +17,7 @@ body {
     margin: 48px 1rem 1rem 0.75rem;
 }
 
-#app-header {
+.app-header {
     margin: 2px 0.5rem;
 }
 

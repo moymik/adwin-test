@@ -1,4 +1,4 @@
-main {
+.app-main {
     height: auto;
     display: flex;
     flex-direction: column;
@@ -11,34 +11,20 @@ main {
     top: 35vh;
 }
 
-main h1 {
+.app-main h1 {
     position: relative;
     margin-bottom: 2rem;
     z-index: -2;
 }
 
-main h2 {
+.app-main h2 {
     position: relative;
     margin-bottom: 0.5rem;
     z-index: -2;
 }
 
-/*
-.bg-overlay {
-    position: absolute;
-    margin-top: -3rem;
-    right: 0;
-    width: 343px;
-    height: 343px;
-    background-image: url("/images/background-343.png");
-    background-repeat: no-repeat;
-    background-position: right 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-*/
 
-.banner-button {
+.banner__button {
     background-color: var(--color-secondary);
 
     &:active {
@@ -63,7 +49,7 @@ main h2 {
         top: 0px;
     }
 
-    main {
+    .app-main {
         display: flex;
         flex-direction: row;
         margin-top: 0;
@@ -96,7 +82,7 @@ main h2 {
         right: 0;
     }
 
-    main {
+    .app-main {
         display: flex;
         flex-direction: column;
     }
