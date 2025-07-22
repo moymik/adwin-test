@@ -20,12 +20,26 @@ async function initApp() {
     initDropdownMenu();
     initCallbackDialog();
   } catch (error) {
-    console.error('Ошибка загрузки компонентов:', error);
-    alert('Произошла ошибка при загрузке страницы. Пожалуйста, попробуйте позже.')
+    showFatalError()
+    throw error;
   }
 }
 
+function showFatalError() {
+  document.querySelector('.app-main').innerHTML = `
+    <div class="error-message">
+      <h2>Произошла ошибка</h2>
+      <p>Попробуйте перезагрузить страницу</p>
+      <button onclick="window.location.reload()">Обновить</button>
+    </div>
+  `;
+}
 
 
-
-initApp();
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    await initApp();
+  } catch (error) {
+    console.error('App initialization failed:', error);
+  }
+});
