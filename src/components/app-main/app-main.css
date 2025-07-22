@@ -89,10 +89,17 @@
 
     .bg-overlay {
         position: fixed;
-        margin: auto;
-        top: 16.5vh;
-        right: 25.8vw;
+        top: 58%;
+        left: 49%;
+        transform: translate(-50%, -50%);
     }
+
+
+    .bg-overlay img{
+        width: 48vw;
+        height:48vw;
+    }
+
 
     .banner__content{
         position: fixed;
